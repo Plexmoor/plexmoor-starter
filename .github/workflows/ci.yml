@@ -25,4 +25,4 @@ jobs:
       - name: Semgrep (code vulnerabilities)
         run: docker run --rm -v "$PWD:/src" semgrep/semgrep semgrep scan --config auto --error
       - name: Gitleaks (leaked secrets)
-        run: docker run --rm -v "$PWD:/repo" ghcr.io/gitleaks/gitleaks:latest git /repo --redact --verbose
+        run: docker run --rm -v "$PWD:/repo" ghcr.io/gitleaks/gitleaks:latest git /repo --log-opts=HEAD --redact --verbose
